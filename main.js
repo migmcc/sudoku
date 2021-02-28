@@ -38,11 +38,29 @@ const row_8 = [58, 59, 60, 67, 68, 69, 76, 77, 78];
 const row_9 = [61, 62, 63, 70, 71, 72, 79, 80, 81];
 
 
-const cells = document.querySelectorAll('.cell');
+const board = document.querySelector('.main-container');
 
-cells.forEach((cell, i) => {
-    // cell.innerText = i+1;
-    // i++;
-    
+
+for (let i=1; i<10; i++) {
+    board.innerHTML += `<div class="blok blok_${i}"></div>`
+};
+board.innerHTML += `<div class="numbers">
+        <button class="num num_1 focus">1</button>
+        <button class="num num_2">2</button>
+        <button class="num num_3">3</button>
+        <button class="num num_4">4</button>
+        <button class="num num_5">5</button>
+        <button class="num num_6">6</button>
+        <button class="num num_7">7</button>
+        <button class="num num_8">8</button>
+        <button class="num num_9">9</button>
+      </div>`
+const blok = document.querySelectorAll('.blok');
+
+blok.forEach(b => {
+    for (let i=0; i<9; i++) {
+        b.innerHTML += `<div class="cell cell_${i} main-num"></div>`
+    }
 });
 
+const cell = document.querySelectorAll('.cell');
